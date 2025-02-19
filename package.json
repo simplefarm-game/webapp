@@ -12,6 +12,7 @@
     "vite": "^6.1.0"
   },
   "dependencies": {
-    "@vitejs/plugin-basic-ssl": "^1.2.0"
+    "@vitejs/plugin-basic-ssl": "^1.2.0",
+    "telegraf": "^4.16.3"
   }
 }
