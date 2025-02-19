@@ -1,0 +1,1 @@
+import WebApp from "@twa-dev/sdk";
