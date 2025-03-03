@@ -1,0 +1,32 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Ou a branch que você deseja fazer o deploy
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # ou a versão que você está usando
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build the project (Development Build)
+      run: npm run build  # Faz o build de desenvolvimento
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.1.0
+      with:
+        branch: gh-pages   # A branch onde você deseja fazer o deploy
+        folder: dist        # A pasta onde os arquivos gerados pelo build estão
+        clean: true         # Limpa o diretório de deploy antes de enviar os arquivos
